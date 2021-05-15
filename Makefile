@@ -4,8 +4,8 @@ CC65DIR=/opt/cc65
 #CC65DIR=/data/data/com.termux/files/home/6502/cc65-master
 
 all: crt0.o neslib2.lib
-	cp crt0.o neslib2.lib ~/8bitworkshop/src/worker/lib/nes/
-	cp neslib.h ~/8bitworkshop/presets/nes/
+	cp crt0.o neslib2.lib /opt/cc65/share/cc65/lib/
+	cp neslib.h /opt/cc65/share/cc65/include/
 
 neslib2.lib: lz4vram.o pad.o rand.o memfill.o vram_read.o vram_unrle.o oam_meta_spr_clip.o oam_meta_spr_pal.o oam_meta_spr.o oam_spr.o oam_clear_fast.o split.o splitxy.o
 	$(CC65DIR)/bin/ar65 a neslib2.lib $^
